@@ -8,11 +8,11 @@
 
     export default {
         name:'Timer',
-        props:['delay'],
+        props:['delay','name'],
       created(){
         setInterval(() => {
-           this.$emit('tick') 
-        }, delay);
+           this.$emit('tick', this.name) 
+        }, this.delay);
       }  
     }
 </script>
